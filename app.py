@@ -1,6 +1,6 @@
 import json
 import os
-
+import handlers
 from flask import Flask
 from flask_restful import Api
 
@@ -8,6 +8,8 @@ ENV_FILE = "env.json"
 
 app = Flask(__name__)
 api = Api(app)
+
+handlers.init(api)
 
 
 @app.after_request
